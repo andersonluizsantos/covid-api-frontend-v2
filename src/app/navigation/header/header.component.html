@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" *ngIf="loginService.isUserLoggedIn()">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <a routerLink="/">Lista de Pessoas</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a routerLink="/addpessoa">Adicionar Pessoa</a>
+            </li>
+            <li>
+                <a routerLink="/logout" class="nav-link">Sair</a>
+            </li>
+        </ul>
+    </div>
+  </mat-toolbar>
+  
