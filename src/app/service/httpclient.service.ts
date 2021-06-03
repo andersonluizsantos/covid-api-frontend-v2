@@ -32,38 +32,30 @@ export class HttpClientService {
 
 
 
-  getPessoas() {
-    /*
-    let username = 'javainuse';
-    let password = 'password';
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    */
-    console.log(sessionStorage.getItem('token'));
-
-
-
+  public getPessoas() {
+    
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': sessionStorage.getItem('token')
     });
-
+    console.log("Serviço ---> ", `${this.url}/pessoas`);
     //return this.httpClient.get<Pessoa[]>(`${this.url}'/pessoas`, { headers });
-    return this.httpClient.get<Pessoa[]>('http://localhost:8083/pessoas', { headers });
+    return this.httpClient.get<Pessoa[]>(`${this.url}/pessoas`, { headers });
   }
 
-  public deletePessoa(employee) {
-    let username = 'javainuse'
-    let password = 'password'
-
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.delete<Employee>("http://localhost:8080/employees" + "/" + employee.empId, { headers });
+  public deletePessoa(id:number) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': sessionStorage.getItem('token')
+    });
+    return this.httpClient.delete<Employee>(`${this.url}/pessoas` + "/" + id, { headers });
   }
 
-  public createPessoa(employee) {
-    let username = 'javainuse'
-    let password = 'password'
-
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.post<Employee>("http://localhost:8080/employees", employee, { headers });
+  public createPessoa(pessoa) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': sessionStorage.getItem('token')
+    });
+    return this.httpClient.post<Employee>(`${this.url}/pessoas`, pessoa, { headers });
   }
 }

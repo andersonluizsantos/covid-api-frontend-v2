@@ -1,0 +1,51 @@
+.excluir {
+    border: none;;
+    background:none;
+    margin:0;
+    padding:0;
+    color: red;
+}
+
+.editar {
+    border: none;;
+    background:none;
+    margin:0;
+    padding:0;
+    color: blue;
+}
+
+.checked {
+    border: none;;
+    background:none;
+    margin:0;
+    padding:0;
+    color: green;
+}
+
+
+.incluir {
+    border: none;;
+    background:none;
+    font-size: 30px;
+    margin:0;
+    padding:0;
+    color: blue;
+}
+
+.w-75{
+    width: 75px;
+}
+
+.w-100{
+    width: 100px;
+}
+
+.th-center{
+    text-align: center;
+}
+.th-left{
+    text-align: left;
+}
+.th-right{
+    text-align: right;
+}

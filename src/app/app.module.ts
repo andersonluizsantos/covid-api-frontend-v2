@@ -32,6 +32,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +45,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     LogoutComponent,
     HeaderComponent,
     LayoutComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FlexLayoutModule,
     FormsModule,
@@ -66,7 +71,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSidenavModule,
     MatListModule,
     AppRoutingModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

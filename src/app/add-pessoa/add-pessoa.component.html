@@ -1,1 +1,20 @@
-<p>add-pessoa works!</p>
+<h1 mat-dialog-title>Nova Pessoa</h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="pessoaForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>CPF</mat-label>
+            <input matInput formControlName="cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" name="nome">
+        </mat-form-field>
+        <section class="example-section">
+            <mat-checkbox id="vacinado" color="primary" formControlName="vacinado">Vacinado?</mat-checkbox>
+        </section>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="inserirPessoa()">Adicionar</button>
+    <button mat-button (click)="cancel()">Cancelar</button>
+</div>
