@@ -80,9 +80,10 @@ export class PessoaComponent implements OnInit {
             console.log(response);
             window.location.reload();        
           }
-        );
-      }
-    });
+          );
+        }
+      });
+      this.buscarPessoas();
   }
 
   editarPessoa(id): void {
