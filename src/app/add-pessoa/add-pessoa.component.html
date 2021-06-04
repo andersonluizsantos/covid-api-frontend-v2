@@ -15,6 +15,7 @@
     </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="inserirPessoa()">Adicionar</button>
+    <button mat-raised-button color="primary" *ngIf="alteracao" (click)="alterarPessoa()">Alterar</button>
+    <button mat-raised-button color="primary" *ngIf="!alteracao" (click)="inserirPessoa()">Incluir</button>
     <button mat-button (click)="cancel()">Cancelar</button>
 </div>

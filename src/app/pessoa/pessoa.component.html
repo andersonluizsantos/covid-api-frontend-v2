@@ -44,7 +44,7 @@
         <ng-container matColumnDef="Ações">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Ações? </mat-header-cell>
             <mat-cell *matCellDef="let row">
-                <a mat-button pButton type="button" id="btnRemover" (click)="excluirPessoa(row.id)" class="editar">
+                <a mat-button pButton type="button" id="btnRemover" (click)="editarPessoa(row.id)" class="editar">
                     <mat-icon style="margin-right:20px">edit</mat-icon>
                 </a>
                 <a mat-button pButton type="button" id="btnRemover" (click)="excluirPessoa(row)" class="excluir">

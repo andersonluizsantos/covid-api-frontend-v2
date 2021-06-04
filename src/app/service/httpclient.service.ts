@@ -48,7 +48,7 @@ export class HttpClientService {
       'Content-Type': 'application/json',
       'Authorization': sessionStorage.getItem('token')
     });
-    return this.httpClient.delete<Employee>(`${this.url}/pessoas` + "/" + id, { headers });
+    return this.httpClient.delete<Pessoa>(`${this.url}/pessoas` + "/" + id, { headers });
   }
 
   public createPessoa(pessoa) {
@@ -56,6 +56,22 @@ export class HttpClientService {
       'Content-Type': 'application/json',
       'Authorization': sessionStorage.getItem('token')
     });
-    return this.httpClient.post<Employee>(`${this.url}/pessoas`, pessoa, { headers });
+    return this.httpClient.post<Pessoa>(`${this.url}/pessoas`, pessoa, { headers });
+  }
+
+  public alterarPessoa(pessoa) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': sessionStorage.getItem('token')
+    });
+    return this.httpClient.put<Pessoa>(`${this.url}/pessoas`, pessoa, { headers });
+  }
+
+  public buscarPessoaPorId(id) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': sessionStorage.getItem('token')
+    });
+    return this.httpClient.get<Pessoa>(`${this.url}/pessoas`+ "/" + id, { headers });
   }
 }

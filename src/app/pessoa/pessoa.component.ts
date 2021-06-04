@@ -85,6 +85,19 @@ export class PessoaComponent implements OnInit {
     });
   }
 
+  editarPessoa(id): void {
+    const dialogRef = this.dialog.open(AddPessoaComponent, {
+      width: '350px',
+      data: {
+        id : id
+      }            
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');      
+    });
+  }
+
   novaPessoa(): void {
     const dialogRef = this.dialog.open(AddPessoaComponent, {
       width: '350px'            
