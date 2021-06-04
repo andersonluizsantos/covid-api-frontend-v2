@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 export class User {
   constructor(
@@ -14,12 +15,16 @@ export class User {
 })
 export class AuthenticationService {
 
+  private readonly url = environment.api;
+  
+
   constructor(private httpClient: HttpClient) { }
   // Provide username and password for authentication, and once authentication is successful, 
   //store JWT token in session
-  authenticate(username, password) {
+  authenticate(username, password) { 
+    console.log("Autenticação ---> ", `${this.url}/authenticate`);   
     return this.httpClient
-      .post<any>("http://localhost:8083/authenticate", { username, password })
+      .post<any>(`${this.url}/authenticate`, { username, password })
       .pipe(
         map(userData => {
           sessionStorage.setItem("username", username);
