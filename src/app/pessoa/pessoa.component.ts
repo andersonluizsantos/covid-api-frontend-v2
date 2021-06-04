@@ -31,7 +31,6 @@ export class PessoaComponent implements OnInit {
   }
   
   ngOnInit() {
-    console.log("teste");
     this.buscarPessoas();
   }
   
@@ -39,7 +38,6 @@ export class PessoaComponent implements OnInit {
     this.httpClientService.getPessoas().subscribe(
       response => {
         this.handleSuccessfulResponse(response);
-        console.log(response);
         this.dataSource = new MatTableDataSource(response);
       }
     );
@@ -47,7 +45,6 @@ export class PessoaComponent implements OnInit {
   }
 
   handleSuccessfulResponse(response) {
-    console.log("teste2");
     this.pessoas = response;
   }
 

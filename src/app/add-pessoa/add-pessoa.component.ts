@@ -24,11 +24,9 @@ export class AddPessoaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("id  ------> ", this.data);
     this.createForm();
     if (this.data) {
       this.httpClientService.buscarPessoaPorId(this.data.id).subscribe(result => {
-        console.log(result);
         this.alteracao = true;
         this.setForm(result);
       });  
@@ -58,7 +56,6 @@ export class AddPessoaComponent implements OnInit {
     let pessoa = new Pessoa();
     pessoa = this.pessoaForm.value;
     pessoa.id = this.data.id;
-    console.log(pessoa);
     this.httpClientService.alterarPessoa(pessoa).subscribe(result => {});
     this.dialogRef.close();
     this.pessoaForm.reset;
@@ -67,7 +64,6 @@ export class AddPessoaComponent implements OnInit {
   }
 
   inserirPessoa(): void {
-    console.log(this.pessoaForm.value);    
     this.httpClientService.createPessoa(this.pessoaForm.value).subscribe(result => {});
     this.dialogRef.close();
     this.pessoaForm.reset;

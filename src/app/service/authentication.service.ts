@@ -22,7 +22,6 @@ export class AuthenticationService {
   // Provide username and password for authentication, and once authentication is successful, 
   //store JWT token in session
   authenticate(username, password) { 
-    console.log("Autenticação ---> ", `${this.url}/authenticate`);   
     return this.httpClient
       .post<any>(`${this.url}/authenticate`, { username, password })
       .pipe(
@@ -37,7 +36,6 @@ export class AuthenticationService {
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem("username");
-    console.log(!(user === null));
     return !(user === null);
   }
 

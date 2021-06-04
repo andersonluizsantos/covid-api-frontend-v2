@@ -38,7 +38,6 @@ export class HttpClientService {
       'Content-Type': 'application/json',
       'Authorization': sessionStorage.getItem('token')
     });
-    console.log("Serviço ---> ", `${this.url}/pessoas`);
     //return this.httpClient.get<Pessoa[]>(`${this.url}'/pessoas`, { headers });
     return this.httpClient.get<Pessoa[]>(`${this.url}/pessoas`, { headers });
   }

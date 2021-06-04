@@ -11,7 +11,7 @@
         <!-- ID Column -->
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.id.substr(0, 10)}} </mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.id.substr(0, 5)}} </mat-cell>
         </ng-container>
 
         <!-- Progress Column -->
@@ -56,7 +56,7 @@
         <ng-container matColumnDef="Novo">
             <mat-header-cell *matHeaderCellDef mat-sort-header>
                 <button mat-raised-button (click)="novaPessoa()">
-                    <mat-icon>add</mat-icon>Nova Pessoa
+                    <mat-icon>add</mat-icon>Novo
                 </button>
             </mat-header-cell>
             <mat-cell *matCellDef="let row"> </mat-cell>
